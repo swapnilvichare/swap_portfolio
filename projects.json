@@ -1,0 +1,30 @@
+[
+  {
+    "title": "To-Do App",
+    "image": "images/todo.png",
+    "description": "A simple to-do app using JavaScript with local storage.",
+    "category": "Productivity",
+    "link": "#"
+  },
+  {
+    "title": "Weather App",
+    "image": "images/wheather.png",
+    "description": "Real-time weather updates using an API.",
+    "category": "API",
+    "link": "#"
+  },
+  {
+    "title": "Calculator",
+    "image": "images/calculator.png",
+    "description": "A basic calculator made with HTML, CSS, JS.",
+    "category": "Utility",
+    "link": "#"
+  },
+  {
+    "title": "Notes App",
+    "image": "images/notes.png",
+    "description": "Note-taking app using local storage.",
+    "category": "Productivity",
+    "link": "#"
+  }
+]

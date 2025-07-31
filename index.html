@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <title>Swap's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style1.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
   <!-- AOS CSS -->
@@ -13,24 +14,33 @@
 
 </head>
 <body>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="images/icons/chatbot1.png" alt="Logo" class="preloader-logo" loading="eager">
+    <h2 class="preloader-text">
+      Loading <span>.</span><span>.</span><span>.</span>
+    </h2>
+  </div>
+</div>
+
+
+
+
   <header>
-    <div class="header-container">
+    <div class="hero">
         <h1>Welcome to Swap's Portfolio</h1>
         <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <button id="theme-toggle">🌙 Dark Mode</button>
+            <a href="#about" class="btn">About</a>
+            <a href="#projects" class="btn">Projects</a>
+            <a href="#contact" class="btn">Contact</a>
+           
         </nav>
     </div>
   </header>
 
   <section id="about" data-aos="fade-right">
-  <div style="text-align:center; margin-top: 20px;">
-  <p>👀 Total Visitors: <span id="total-visitors">0</span></p>
-  <p>📅 Visitors Today: <span id="today-visitors">0</span></p>
-</div>
-
+ 
 
     <h2>About Me</h2>
     <p><span id="typing">Hello! I'm Swap, an aspiring developer building apps and websites.</span></p>
@@ -38,38 +48,7 @@
   📄 Download Resume
 </a>
   </section>
-<!--
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-container">
-        <div class="project-card">
-            <img src="images/todo.png" alt="To-Do App">
-            <h3>To-Do App</h3>
-            <p>A simple to-do app using JavaScript with local storage.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="images/wheather.png" alt="To-Do App">
-            <h3>To-Do App</h3>
-            <p>Get real-time wheather updates using an API.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="images/calculator.png" alt="To-Do App">
-            <h3>To-Do App</h3>
-            <p>Get real-time wheather updates using an API.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="images/notes.png" alt="To-Do App">
-            <h3>To-Do App</h3>
-            <p>Get real-time wheather updates using an API.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-    </div>
-    
-  </section>
--->
+
   <section id="projects" data-aos="fade-left">
     <h2>Projects</h2>
     <div style="margin-bottom: 15px;">
@@ -86,9 +65,6 @@
     </div>
 
 </section>  
-
-
-  </section>
 
   <section id="contact" data-aos="zoom-in">
     <h2>Contact Me</h2>
@@ -108,16 +84,15 @@
 
   <footer>
     <p>© 2025 Swapnil Vichare</p>
-  
-  <div class="fab-container">
+</footer>
+<div class="fab-container">
   <a href="https://wa.me/919999999999" class="fab whatsapp" target="_blank" title="Chat on WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" />
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" loading="lazy"/>
   </a>
   <button class="fab chat" title="Open Chatbot" id="chat-toggle">
-    <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat" />
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Chat" loading="lazy"/>
   </button>
 </div>
-
 <!-- Chatbot Box -->
 <div id="chatbot" class="chatbot-box">
   <div class="chat-header">🤖 Mini Chatbot <span id="chat-close">&times;</span></div>
@@ -127,18 +102,13 @@
   <button id="mic-btn" title="Speak">🎤</button>
   <button id="send-btn">Send</button>
 </div>
-
 </div>
-
-</footer>
-
-
-
-  
+ <script src="script.js" defer></script>
+ <script src="chatbot.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="chatbot.js"></script>
-  <script src="script.js"></script>
+  
+ 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -148,6 +118,20 @@
 
 
 
+<script>
+  // Scroll animation for cards
+  const cards = document.querySelectorAll(".card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = "fadeUp 1s ease forwards";
+      }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+
+</script>
 
 </body>
 </html>

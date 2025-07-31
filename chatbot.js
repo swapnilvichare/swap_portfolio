@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     userInput.addEventListener("keypress", function (e) {
       if (e.key === "Enter") sendMessage();
     });
-
+/*
     function sendMessage() {
       const msg = userInput.value.trim();
       if (!msg) return;
@@ -37,6 +37,43 @@ document.addEventListener("DOMContentLoaded", function () {
         speak(reply);
       }, 500);
     }
+      */
+     let responses = {};
+
+// Load responses.json when chatbot loads
+fetch("responses.json")
+  .then(res => res.json())
+  .then(data => {
+    responses = data;
+  })
+  .catch(err => console.error("❌ Could not load responses.json:", err));
+
+function sendMessage() {
+  const msg = userInput.value.trim();
+  if (!msg) return;
+
+  chatBody.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
+  userInput.value = "";
+
+  const lowerMsg = msg.toLowerCase();
+  let reply = "Sorry, I didn't understand that. Try asking about projects, about me, or contact.";
+
+  // Check if any keyword matches
+  for (const key in responses) {
+    if (lowerMsg.includes(key)) {
+      reply = responses[key];
+      break;
+    }
+  }
+
+  // Show bot response
+  setTimeout(() => {
+    chatBody.innerHTML += `<div><strong>Bot:</strong> ${reply}</div>`;
+    chatBody.scrollTop = chatBody.scrollHeight;
+    speak(reply);
+  }, 500);
+}
+
 
     function speak(message) {
       const speech = new SpeechSynthesisUtterance(message);

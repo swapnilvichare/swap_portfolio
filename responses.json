@@ -1,0 +1,13 @@
+{
+  "hello": "Hi there! 👋",
+  "hi": "Hello! How can I help you today?",
+  "how are you": "I'm just a bot, but I'm feeling great! 😄",
+  "about": "I'm Swapnil's chatbot 🤖. I can answer questions about him and his projects.",
+  "project": "I have multiple projects! 💻 Check the Projects section for details.",
+  "skills": "Swapnil is skilled in Web Development (HTML, CSS, JS), UI/UX, and Cybersecurity. 🔒",
+  "contact": "You can use the Contact form below, or email Swapnil directly.",
+  "email": "Swapnil's email is swapnil@example.com",
+  "github": "Here is the GitHub profile: <a href='https://github.com/swapnilvichare' target='_blank'>GitHub</a>.",
+  "linkedin": "Here is the LinkedIn profile: <a href='https://linkedin.com/in/swapnil' target='_blank'>LinkedIn</a>.",
+  "bye": "Goodbye! 👋 Have a great day!"
+}

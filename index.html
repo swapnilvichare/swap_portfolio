@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style1.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
 
   <!-- AOS CSS -->
@@ -24,9 +25,6 @@
   </div>
 </div>
 
-
-
-
   <header>
     <div class="hero">
         <h1>Welcome to Swap's Portfolio</h1>
@@ -39,15 +37,32 @@
     </div>
   </header>
 
-  <section id="about" data-aos="fade-right">
- 
+  <section id="about" class="about-section" data-aos="fade-up">
+  <div class="about-container">
+    <div class="about-image" data-aos="zoom-in" data-aos-delay="200">
+      <img src="photo.png" alt="Your Name">
+    </div>
 
-    <h2>About Me</h2>
-    <p><span id="typing">Hello! I'm Swap, an aspiring developer building apps and websites.</span></p>
-    <a href="assets/Swapnil_Resume.pdf" download class="btn resume-btn">
-  📄 Download Resume
-</a>
-  </section>
+    <div class="about-content" data-aos="fade-up" data-aos-delay="400">
+      <h2>About Me</h2>
+      <h3 class="typing-text"></h3>
+      <p>
+        Hi! I'm <strong>Swapnil Vichare</strong>, a passionate developer who loves building modern, 
+        user-friendly web and mobile applications. I enjoy learning new technologies, 
+        experimenting with designs, and solving real-world problems through code.
+      </p>
+      <p>
+        My main skills include <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, 
+        and <span>React</span>. In my free time, I love gaming, exploring UI/UX design, 
+        and contributing to open-source projects.
+      </p>
+      <a href="#projects" class="btn-primary">View My Projects</a>
+    </div>
+  </div>
+</section>
+
+
+
 
   <section id="projects" data-aos="fade-left">
     <h2>Projects</h2>
@@ -65,6 +80,7 @@
     </div>
 
 </section>  
+
 
   <section id="contact" data-aos="zoom-in">
     <h2>Contact Me</h2>
@@ -131,6 +147,13 @@
   }, { threshold: 0.2 });
   cards.forEach(card => observer.observe(card));
 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
 </script>
 
 </body>

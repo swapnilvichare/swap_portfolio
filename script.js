@@ -10,6 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3000); // minimum display time
 });
 
+const typingElement = document.querySelector(".typing-text");
+const typingPhrases = [
+  "I'm a Web Developer 💻",
+  "I love building UI/UX designs 🎨",
+  "I create modern, user-friendly apps 🚀"
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let currentPhrase = "";
+let isDeleting = false;
+
+function typeEffect() {
+  currentPhrase = typingPhrases[phraseIndex];
+  if (!isDeleting) {
+    typingElement.textContent = currentPhrase.slice(0, ++charIndex);
+    if (charIndex === currentPhrase.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); // Pause after typing complete
+      return;
+    }
+  } else {
+    typingElement.textContent = currentPhrase.slice(0, --charIndex);
+    if (charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % typingPhrases.length;
+    }
+  }
+  setTimeout(typeEffect, isDeleting ? 70 : 120);
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
+
+
 
 // ✅ EmailJS Initialization
 (function () {
@@ -50,6 +83,7 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
 
 
 // ✅ Projects Data + Filter Logic
